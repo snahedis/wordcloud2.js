@@ -9,7 +9,7 @@
 'use strict';
 
 // setImmediate
-if (!window.setImmediate) {
+if (typeof window !== 'undefined' && !window.setImmediate) {
   window.setImmediate = (function setupSetImmediate() {
     return window.msSetImmediate ||
     window.webkitSetImmediate ||
@@ -72,7 +72,7 @@ if (!window.setImmediate) {
   })();
 }
 
-if (!window.clearImmediate) {
+if (typeof window !== 'undefined' && !window.clearImmediate) {
   window.clearImmediate = (function setupClearImmediate() {
     return window.msClearImmediate ||
     window.webkitClearImmediate ||
